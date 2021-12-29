@@ -41,7 +41,7 @@ export default class Task2 extends Component {
                 <li className="element" onMouseOver={() => this.addText(item.text)} onMouseOut={this.removeText} key={item.id}>id - {item.id}</li>
             )}
             </ul>
-            <p className="text"></p>
+            <div className="text"></div>
         </div>
         )
     }
