@@ -40,4 +40,4 @@ export default class Task2 extends Component {
         </div>
         )
     }
-}
+} 
