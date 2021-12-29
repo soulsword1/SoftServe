@@ -33,7 +33,7 @@ export default class Task2 extends Component {
         return(<div>
                 <ul>
             {list.map(item => 
-                <li className="element" onClick={() => this.addText(item.text)} key={item.id}>id - {item.id}</li>
+                <li className="element" mouseOver={() => this.addText(item.text)} key={item.id}>id - {item.id}</li>
             )}
             </ul>
             <div className="text"></div>
