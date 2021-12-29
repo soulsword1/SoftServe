@@ -23,26 +23,55 @@ export default class Task2 extends Component {
         };
     }
 
-    addText = (el) => {
-        const text = document.getElementsByClassName('text');
-        text[0].textContent = el;
+    addText = (id) => {
+        this.setState({
+            text: this.state.list[id].text
+        })
     }
 
     removeText = () => {
-        const text = document.getElementsByClassName('text');
-        text[0].textContent = null;
+        this.setState({
+            text: ''
+        })
     }
 
     render() {
-        const list = this.state.list;
+        const { list, text } = this.state;
         return(<div>
                 <ul>
             {list.map(item => 
-                <li className="element" onMouseOver={() => this.addText(item.text)} onMouseOut={this.removeText} key={item.id}>id - {item.id}</li>
+                <li className="element" onMouseOver={() => this.addText(item.id)} onMouseOut={this.removeText} key={item.id}>id - {item.id}</li>
             )}
             </ul>
-            <div className="text"></div>
+            <div className='text'>{text}</div>
         </div>
         )
     }
 }
+
+
+
+
+
+// addText = (el) => {
+//     const text = document.getElementsByClassName('text');
+//     text[0].textContent = el;
+// }
+
+// removeText = () => {
+//     const text = document.getElementsByClassName('text');
+//     text[0].textContent = null;
+// }
+
+// render() {
+//     const list = this.state.list;
+//     return(<div>
+//             <ul>
+//         {list.map(item => 
+//             <li className="element" onMouseOver={() => this.addText(item.text)} onMouseOut={this.removeText} key={item.id}>id - {item.id}</li>
+//         )}
+//         </ul>
+//         <p className="text"></p>
+//     </div>
+//     )
+// }
