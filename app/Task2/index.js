@@ -36,7 +36,7 @@ export default class Task2 extends Component {
                 <li className="element" onClick={() => this.addText(item.text)} key={item.id}>id - {item.id}</li>
             )}
             </ul>
-            <div className="text">Text: </div>
+            <div className="text"></div>
         </div>
         )
     }
