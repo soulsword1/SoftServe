@@ -25,7 +25,7 @@ export default class Task2 extends Component {
 
     addText = (el) => {
         const text = document.getElementsByClassName('text');
-        text[0].innerHTML = el;
+        text[0].textContent = el;
     }
 
     render() {
