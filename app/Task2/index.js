@@ -24,8 +24,9 @@ export default class Task2 extends Component {
     }
 
     addText = (id) => {
+        let realId = id - 1
         this.setState({
-            text: this.state.list[id].text
+            text: this.state.list[realId].text
         })
     }
 
