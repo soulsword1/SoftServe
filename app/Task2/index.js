@@ -25,7 +25,7 @@ export default class Task2 extends Component {
 
     addText = (el) => {
         const text = document.getElementsByClassName('text');
-        text[0].innerHTML = `Text: ${el}`;
+        text[0].innerHTML = el;
     }
 
     render() {
@@ -33,7 +33,7 @@ export default class Task2 extends Component {
         return(<div>
                 <ul>
             {list.map(item => 
-                <li className="element" mouseOver={() => this.addText(item.text)} key={item.id}>id - {item.id}</li>
+                <li className="element" onMouseOver={() => this.addText(item.text)} key={item.id}>id - {item.id}</li>
             )}
             </ul>
             <div className="text"></div>
