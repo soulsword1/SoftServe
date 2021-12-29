@@ -23,7 +23,21 @@ export default class Task2 extends Component {
         };
     }
 
+    addText = (el) => {
+        const text = document.getElementsByClassName('text');
+        text[0].innerHTML = `Text: ${el}`;
+    }
+
     render() {
-        return null;
+        const list = this.state.list;
+        return(<div>
+                <ul>
+            {list.map(item => 
+                <li className="element" onClick={() => this.addText(item.text)} key={item.id}>id: {item.id}</li>
+            )}
+            </ul>
+            <div className="text">Text: </div>
+        </div>
+        )
     }
 }
