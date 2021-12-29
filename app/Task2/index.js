@@ -28,16 +28,21 @@ export default class Task2 extends Component {
         text[0].textContent = el;
     }
 
+    removeText = () => {
+        const text = document.getElementsByClassName('text');
+        text[0].textContent = null;
+    }
+
     render() {
         const list = this.state.list;
         return(<div>
                 <ul>
             {list.map(item => 
-                <li className="element" onMouseOver={() => this.addText(item.text)} key={item.id}>id - {item.id}</li>
+                <li className="element" onMouseOver={() => this.addText(item.text)} onMouseOut={this.removeText} key={item.id}>id - {item.id}</li>
             )}
             </ul>
-            <div className="text"></div>
+            <p className="text"></p>
         </div>
         )
     }
-} 
+}
